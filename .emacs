@@ -52,12 +52,12 @@
 
 ;; Override marks used to show whitespace with ones easier to read
 (setq whitespace-display-mappings
-  ;; NOTE: All values below are in unicode decimal-codes,
-  ;;       (insert-char b7) can be used to view glyphs, but requires hex value.
+  ;; NOTE: The replacement values below are in unicode hex-codes,
+  ;;       (insert-char 23ce) can be used to view a glyph.
   '(
-    (space-mark 32 [183])       ;; ·
-    (newline-mark 10 [9166 10]) ;; ⏎
-    (tab-mark 9 [9655 9])       ;; ▷
+    (space-mark 32 [#xB7])        ;; ·
+    (newline-mark 10 [#x23CE 10]) ;; ⏎
+    (tab-mark 9 [#x25B7 9])       ;; ▷
   )
 )
 
