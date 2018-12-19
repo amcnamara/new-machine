@@ -45,12 +45,20 @@ alias l="ls"
 alias g="grep"
 
 # When piping X always force emacs to open in a terminal (no-window)
-alias emacs="emacs -nw"
+alias emacsemacs=$(which emacs)
+alias emacsd="emacsemacs --daemon"
+alias emacs="emacsclient -nw"
 # Set default editor for git, git-blog, etc
 export EDITOR=emacs
 
 # Add git-blog scripts to path
 export PATH=$WORKSPACE/git-blog/bin:$PATH
+
+# Set java home for emacs' jdee
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+# Add cask binaries to path
+export PATH=~/.cask/bin:$PATH
 
 # Add go binaries to path
 export PATH=~/go/bin:$PATH
