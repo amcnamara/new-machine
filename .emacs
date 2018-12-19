@@ -6,11 +6,8 @@
              '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-;; Dev version of jdee
-(add-to-list 'load-path "~/Workspace/jdee")
-(require 'jdee)
-
 ;; Warm up the beanshell when starting the emacs daemon, since it's expensive
+(require 'jdee)
 (require 'jdee-bsh)
 (when (daemonp)
   (add-hook 'after-init-hook (lambda() (jdee-bsh-run))))
@@ -135,11 +132,9 @@
  ;; If there is more than one, they won't work right.
  '(jdee-compile-enable-kill-buffer 2)
  '(jdee-compiler (quote ("javac")))
- '(jdee-jdk-registry
-   (quote
-    (("10" . "/Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home"))))
+ '(jdee-jdk-registry (quote (("10.0" . "/Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home"))))
  '(jdee-server-dir "/Users/amcnamara/.emacs.d/jdee-server/target")
- '(package-selected-packages (quote (kotlin-mode devdocs smartparens))))
+ '(package-selected-packages (quote (jdee kotlin-mode devdocs smartparens))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
