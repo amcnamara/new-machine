@@ -40,10 +40,6 @@ fi
 
 export WORKSPACE=~/Workspace
 
-# General shorthand and mis-typed stuff
-alias l="ls"
-alias g="grep"
-
 # When piping X always force emacs to open in a terminal (no-window)
 alias emacsemacs=$(which emacs)
 alias emacsd="emacsemacs --daemon"
@@ -55,7 +51,7 @@ export EDITOR=emacs
 export PATH=$WORKSPACE/git-blog/bin:$PATH
 
 # Set java home for emacs' jdee
-export JAVA_HOME=$(/usr/libexec/java_home)
+#export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Add cask binaries to path
 export PATH=~/.cask/bin:$PATH
