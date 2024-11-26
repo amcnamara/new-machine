@@ -1,5 +1,20 @@
-### New machine checklist:
+### New machine checklist
 
+* Install [brew](https://brew.sh/), and load default set of software:
+```
+cd ~
+xargs brew install < brew-all.txt
+```
+* Create a workspace:
+```
+mydir ~/Workspace
+cd ~/Workspace
+```
+* Check out this repo, obviously:
+```
+git clone git@github.com:amcnamara/new-machine.git
+cd new-machine
+```
 * Copy dotfiles to home:
 ```
 cp .emacs ~
@@ -18,10 +33,6 @@ sudo shutdown -r now
   * `Keys` > `Remap Modifiers` > `Left Command ⌘` to `Left Control ⌃`
   * `Keys` > `Remap Modifiers` > `Right Command ⌘` to `Left Option ⌥`
   * `General` > `Selection` > `Applications in terminal may access clipboard`
-* Install [brew](https://brew.sh/), and load default set of software:
-```
-xargs brew install < brew-all.txt
-```
 * Setup a GitHub [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) key, and [GPG](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account) signing key:
 ```
 git config --global user.signingkey <key-id>
