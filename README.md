@@ -38,3 +38,9 @@ git config --global user.signingkey <key-id>
 git config --global commit.gpgsign true
 git config --global tag.gpgSign true
 ```
+* Clean up this repo and check for system software updates:
+```
+rm -rf ~/Workspace/new-machine
+cd ~
+softwareupdate -l
+```
