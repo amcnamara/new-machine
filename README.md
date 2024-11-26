@@ -35,11 +35,21 @@ sudo shutdown -r now
   * `Keys` > `Remap Modifiers` > `Left Command ⌘` to `Left Control ⌃`
   * `Keys` > `Remap Modifiers` > `Right Command ⌘` to `Left Option ⌥`
   * `General` > `Selection` > `Applications in terminal may access clipboard`
+* Set default Git profile:
+```
+git config --global user.name "Alex McNamara"
+git config --global user.email "alex.mcnamara@gmail.com"
+```
 * Setup a GitHub [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) key, and [GPG](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account) signing key:
 ```
-git config --global user.signingkey <key-id>
 git config --global commit.gpgsign true
 git config --global tag.gpgSign true
+```
+```
+gpg --list-secret-keys --keyid-format=long
+```
+```
+git config --global user.signingkey <key-id>
 ```
 * Clean up this repo and check for system software updates:
 ```
