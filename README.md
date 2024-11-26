@@ -1,4 +1,4 @@
-New machine checklist:
+### New machine checklist:
 
 * Copy dotfiles to home:
 ```
