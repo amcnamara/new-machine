@@ -7,8 +7,13 @@ cd ~/Workspace
 ```
 * Install [brew](https://brew.sh/), pull down this repo (obviously), and load default set of software:
 ```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+```
 brew install git
 git clone git@github.com:amcnamara/new-machine.git ~/Workspace/new-machine
+```
+```
 cd ~/Workspace/new-machine
 xargs brew install < brew-all.txt
 ```
@@ -19,6 +24,9 @@ cp .emacs ~
 cp .zshrc ~
 ```
 * Install [ZSH](https://ohmyz.sh/)
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 * Install consolas font:
 ```
 open ~/Workspace/new-machine/Consolas.ttf
