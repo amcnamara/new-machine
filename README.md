@@ -46,10 +46,29 @@ git config --global commit.gpgsign true
 git config --global tag.gpgSign true
 ```
 ```
+gpg --full-generate-key
 gpg --list-secret-keys --keyid-format=long
 ```
 ```
+gpg --armor --export <key-id>
+```
+```
 git config --global user.signingkey <key-id>
+```
+```
+ssh-keygen -t ed25519 -C "alex.mcnamara@gmail.com"
+eval "$(ssh-agent -s)"
+touch ~/.ssh/config
+cat >> ~/.ssh/config<< EOF
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+EOF
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+```
+```
+cat .ssh/id_ed25519.pub
 ```
 * Clean up this repo and check for system software updates:
 ```
