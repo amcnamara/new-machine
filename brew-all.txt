@@ -6,7 +6,6 @@ chrome-cli
 cmake
 docutils
 emacs
-git
 git-lfs
 gnu-chess
 gnu-go

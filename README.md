@@ -1,22 +1,20 @@
 ### New machine checklist
 
-* Install [brew](https://brew.sh/), and load default set of software:
-```
-cd ~
-xargs brew install < brew-all.txt
-```
 * Create a workspace:
 ```
 mydir ~/Workspace
 cd ~/Workspace
 ```
-* Check out this repo, obviously:
+* Install [brew](https://brew.sh/), pull down this repo (obviously), and load default set of software:
 ```
-git clone git@github.com:amcnamara/new-machine.git
-cd new-machine
+brew install git
+git clone git@github.com:amcnamara/new-machine.git ~/Workspace/new-machine
+cd ~/Workspace/new-machine
+xargs brew install < brew-all.txt
 ```
 * Copy dotfiles to home:
 ```
+cd ~/Workspace/new-machine
 cp .emacs ~
 cp .zshrc ~
 ```
@@ -25,6 +23,7 @@ cp .zshrc ~
 * Set tracking speed, key repeat (fastest), and key delay (shortest)
 * Copy OSX App Shortcuts (requires restart):
 ```
+cd ~/Workspace/new-machine
 cp ./GlobalPreferences.plist ~/Library/Preferences/.GlobalPreferences.plist
 sudo shutdown -r now
 ```
