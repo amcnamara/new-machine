@@ -26,6 +26,7 @@ moreutils
 multimarkdown
 nghttp2
 octave
+ollama
 poppler
 python-lsp-server
 python@3.9
