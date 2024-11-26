@@ -19,7 +19,10 @@ cp .emacs ~
 cp .zshrc ~
 ```
 * Install [ZSH](https://ohmyz.sh/)
-* Install consolas font by clicking on `./Consolas.tff`
+* Install consolas font:
+```
+open ~/Workspace/new-machine/Consolas.ttf
+```
 * Set tracking speed, key repeat (fastest), and key delay (shortest)
 * Copy OSX App Shortcuts (requires restart):
 ```
