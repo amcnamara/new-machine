@@ -15,8 +15,8 @@ sudo shutdown -r now
 ```
 * Install [iTerm2](https://iterm2.com/), and additionally set:
   * Load `iTerm_default.json` profile settings
-  * `Left Command ⌘` to `Left Control ⌃`
-  * `Right Command ⌘` to `Left Option ⌥`
+  * `Keys` > `Remap Modifiers` > `Left Command ⌘` to `Left Control ⌃`
+  * `Keys` > `Remap Modifiers` > `Right Command ⌘` to `Left Option ⌥`
   * `General` > `Selection` > `Applications in terminal may access clipboard`
 * Install [brew](https://brew.sh/), and load default set of software:
 ```
