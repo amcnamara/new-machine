@@ -1,12 +1,30 @@
 New machine checklist:
 
+* Copy dotfiles to home:
+```
+cp .emacs ~
+cp .zshrc ~
+```
+* Install (ZSH)[https://ohmyz.sh/]
 * Install consolas font by clicking on `./Consolas.tff`
-* Set tracking speed, key repeat and delay
-* Copy OSX App Shortcuts to `~/Library/Preferences/.GlobalPreferences.plist` [NOTE: requires restart]
-* Install brew, and load default set of software:
-  * `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-  * `xargs brew install < brew-all.txt`
-* Load `iTerm_default.json` profile settings, and additionally set:
+* Set tracking speed, key repeat (fastest), and key delay (shortest)
+* Copy OSX App Shortcuts (requires restart):
+```
+cp ./GlobalPreferences.plist ~/Library/Preferences/.GlobalPreferences.plist
+sudo shutdown -r now
+```
+* Install (iTerm2)[https://iterm2.com/], and additionally set:
+  * Load `iTerm_default.json` profile settings
   * `Left Command ⌘` to `Left Control ⌃`
   * `Right Command ⌘` to `Left Option ⌥`
   * `General` > `Selection` > `Applications in terminal may access clipboard`
+* Install (brew)[https://brew.sh/], and load default set of software:
+```
+xargs brew install < brew-all.txt
+```
+* Setup a GitHub (SSH)[https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account] key, and (GPG)[https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account] signing key:
+```
+git config --global user.signingkey <key-id>
+git config --global commit.gpgsign true
+git config --global tag.gpgSign true
+```
