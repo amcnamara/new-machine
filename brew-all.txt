@@ -35,6 +35,7 @@ qwt
 szip
 tbb
 tesseract
+tidy-html5
 tldr
 wget
 yarn
