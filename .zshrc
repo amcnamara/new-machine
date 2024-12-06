@@ -112,3 +112,6 @@ alias git-report-generate-all='f() {
     ~/Workspace/reports/auditboard_report_global.csv
   echo " $fg[green]done$reset_color"
 }; f'
+
+# Used to authorize signing keys for Git commits
+export GPG_TTY=$(tty)
