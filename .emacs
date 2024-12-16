@@ -178,11 +178,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(jdee-compile-enable-kill-buffer 2)
- '(jdee-compiler '("javac"))
- '(jdee-jdk-registry
-   '(("10.0" . "/Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home")))
- '(jdee-server-dir "/Users/amcnamara/.emacs.d/jdee-server/target")
+ ; '(jdee-compile-enable-kill-buffer 2)
+ ; '(jdee-compiler '("javac"))
+ ; '(jdee-jdk-registry
+ ;   '(("10.0" . "/Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home")))
+ ; '(jdee-server-dir "/Users/amcnamara/.emacs.d/jdee-server/target")
  '(package-selected-packages
    '(ellama quelpa-leaf quelpa-use-package quelpa company jdee kotlin-mode devdocs smartparens)))
 (custom-set-faces
