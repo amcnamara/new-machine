@@ -17,6 +17,16 @@ git clone git@github.com:amcnamara/new-machine.git ~/Workspace/new-machine
 cd ~/Workspace/new-machine
 xargs brew install < brew-all.txt
 ```
+* Start Ollama daemon, this also registers a system-startup initializer:
+```
+brew services start ollama
+```
+* Pull down local models for Ellama:
+```
+ollama pull llama3.1:8b-instruct-q8_0
+ollama pull qwen2.5-coder:3b
+ollama pull qwen2.5:3b
+```
 * Copy dotfiles to home:
 ```
 cd ~/Workspace/new-machine
