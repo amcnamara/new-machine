@@ -29,9 +29,10 @@ octave
 ollama
 poppler
 python-lsp-server
-python@3.9
+python
 pyyaml
 qwt
+rust
 szip
 tbb
 tesseract
