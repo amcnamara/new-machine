@@ -114,4 +114,7 @@ alias git-report-generate-all='f() {
 }; f'
 
 # Used to authorize signing keys for Git commits
+#
+# NOTE: If stuck waiting on a lock, delete the locks via
+#       rm ~/.gnupg/{S.keyboxd,public-keys.d/pubring.db.lock}
 export GPG_TTY=$(tty)
