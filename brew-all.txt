@@ -27,6 +27,7 @@ multimarkdown
 nghttp2
 octave
 ollama
+pandoc
 poppler
 python-lsp-server
 python
