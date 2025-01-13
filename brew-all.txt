@@ -22,6 +22,7 @@ kubernetes-cli
 libpthread-stubs
 links
 lynx
+monitorcontrol
 moreutils
 multimarkdown
 nghttp2
@@ -29,8 +30,8 @@ octave
 ollama
 pandoc
 poppler
-python-lsp-server
 python
+python-lsp-server
 pyyaml
 qwt
 rust
