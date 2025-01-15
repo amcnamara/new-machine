@@ -40,5 +40,7 @@ tbb
 tesseract
 tidy-html5
 tldr
+tree
+watch
 wget
 yarn
