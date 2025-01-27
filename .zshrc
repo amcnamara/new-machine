@@ -1,7 +1,14 @@
 # --- ZedShell --- #
 
-# Allow inline comments
-setopt interactivecomments
+# Oh-my-zsh configuration
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+HYPHEN_INSENSITIVE="true"
+COMPLETION_WAITING_DOTS="true"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+
+export GNUTERM=qt
 
 # Autocompletion configuration
 autoload -U compinit
@@ -11,8 +18,6 @@ setopt COMPLETE_IN_WORD
 setopt correctall
 # Group matches by their description
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
-# Match completions without case sensitivity
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # Record shell command history
 export HISTSIZE=50000
@@ -50,9 +55,6 @@ alias emacs="emacsclient -nw"
 # Set default editor for git, git-blog, etc
 export EDITOR=emacs
 
-# Add git-blog scripts to path
-export PATH=$WORKSPACE/git-blog/bin:$PATH
-
 # Set java home for emacs' jdee
 #export JAVA_HOME=$(/usr/libexec/java_home)
 
@@ -61,6 +63,9 @@ export PATH=~/.cask/bin:$PATH
 
 # Add go binaries to path
 export PATH=~/go/bin:$PATH
+
+# Add mustache binary to path
+export PATH=~/.local/bin:$PATH
 
 # Use tldr man pages, when possible
 alias manman=$(which man)
@@ -73,6 +78,7 @@ alias man='f() {
     man $1
   fi
 }; f'
+
 
 alias git-report='f() {
   git ${@} log --shortstat --no-merges --pretty="format:#%H, %aN, %ae, %cd, " --date="format:%Y-%m-%d" |
