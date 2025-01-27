@@ -33,7 +33,7 @@ cd ~/Workspace/new-machine
 cp .emacs ~
 cp .zshrc ~
 ```
-* Install [ZSH](https://ohmyz.sh/)
+* Install [OMZ](https://ohmyz.sh/)
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```

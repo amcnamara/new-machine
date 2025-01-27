@@ -44,3 +44,4 @@ tree
 watch
 wget
 yarn
+zsh
