@@ -27,15 +27,15 @@ ollama pull llama3.1:8b-instruct-q8_0
 ollama pull qwen2.5-coder:3b
 ollama pull qwen2.5:3b
 ```
+* Install [OMZ](https://ohmyz.sh/)
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 * Copy dotfiles to home:
 ```
 cd ~/Workspace/new-machine
 cp .emacs ~
 cp .zshrc ~
-```
-* Install [OMZ](https://ohmyz.sh/)
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 * Install consolas font:
 ```
