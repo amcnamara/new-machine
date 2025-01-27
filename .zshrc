@@ -1,3 +1,18 @@
+# --- Git Signing --- #
+
+# NOTE: If stuck waiting on a lock, delete the locks via
+#       rm ~/.gnupg/{S.keyboxd,public-keys.d/pubring.db.lock}
+export GPG_TTY=$(tty)
+
+
+# --- Credentials --- #
+
+# export HOMEBREW_GITHUB_API_TOKEN
+if [[ -e .tokensrc ]]; then
+  source .tokensrc
+fi
+
+
 # --- ZedShell --- #
 
 # Oh-my-zsh configuration
@@ -8,14 +23,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-export GNUTERM=qt
-
-# Autocompletion configuration
-autoload -U compinit
-compinit -C
-# Allow tab completion in the middle of a word
-setopt COMPLETE_IN_WORD
-setopt correctall
 # Group matches by their description
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 
@@ -35,15 +42,6 @@ export PROMPT="%{$fg[blue]%}[%{$reset_color%}%(!.%{$fg[red]%}root%{$reset_color%
 export RPROMPT="%{$fg[yellow]%}%~%{$reset_color%}"
 
 
-# --- Credentials --- #
-
-# export HOMEBREW_GITHUB_API_TOKEN
-# export ...     
-if [[ -e .tokensrc ]]; then
-  source .tokensrc
-fi
-
-
 # --- Environment --- #
 
 export WORKSPACE=~/Workspace
@@ -54,6 +52,9 @@ alias emacsd="emacsemacs --daemon"
 alias emacs="emacsclient -nw"
 # Set default editor for git, git-blog, etc
 export EDITOR=emacs
+
+# Used for Gnuplot
+export GNUTERM=qt
 
 # Set java home for emacs' jdee
 #export JAVA_HOME=$(/usr/libexec/java_home)
@@ -118,9 +119,3 @@ alias git-report-generate-all='f() {
     ~/Workspace/reports/auditboard_report_global.csv
   echo " $fg[green]done$reset_color"
 }; f'
-
-# Used to authorize signing keys for Git commits
-#
-# NOTE: If stuck waiting on a lock, delete the locks via
-#       rm ~/.gnupg/{S.keyboxd,public-keys.d/pubring.db.lock}
-export GPG_TTY=$(tty)
