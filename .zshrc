@@ -68,6 +68,13 @@ export PATH=~/go/bin:$PATH
 # Add mustache binary to path
 export PATH=~/.local/bin:$PATH
 
+# Add brew-managed python to path
+# TODO: Consider using pvenv to manage multiple versions
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# Add global node modules path
+export NODE_PATH=$(npm root --quiet -g)
+
 # Use tldr man pages, when possible
 alias manman=$(which man)
 alias man='f() {
