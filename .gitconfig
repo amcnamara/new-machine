@@ -52,3 +52,7 @@
 
 [tag]
     sort = version:refname
+
+[user]
+    name = Alex McNamara
+    email = alex.mcnamara@gmail.com
