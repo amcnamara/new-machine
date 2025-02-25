@@ -1,0 +1,47 @@
+[branch]
+        sort = -committerdate
+
+[commit]
+        verbose = true
+
+[core]
+        fsmonitor = true
+        untrackedCache = true
+
+[diff]
+        algorithm = histogram
+        colorMoved = plain
+        mnemonicPrefix = true
+        renames = true
+
+[fetch]
+        all = true
+
+[help]
+        autocorrect = prompt
+
+[init]
+        defaultBranch = main
+
+[merge]
+        conflictstyle = zdiff3
+
+[pull]
+        rebase = true
+
+[push]
+        default = simple
+        autoSetupRemote = true
+        followTags = true
+
+[rebase]
+        autoSquash = true
+        autoStash = true
+        updateRefs = true
+
+[rerere]
+        enabled = true
+        autoupdate = true
+
+[tag]
+        sort = version:refname

@@ -36,6 +36,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 cd ~/Workspace/new-machine
 cp .emacs ~
 cp .zshrc ~
+cp .gitconfig ~
 ```
 * Install consolas font:
 ```
