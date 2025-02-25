@@ -1,47 +1,54 @@
 [branch]
-        sort = -committerdate
+    sort = -committerdate
 
 [commit]
-        verbose = true
+    verbose = true
 
 [core]
-        fsmonitor = true
-        untrackedCache = true
+    fsmonitor = true
+    pager = delta
+    untrackedCache = true
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
 
 [diff]
-        algorithm = histogram
-        colorMoved = plain
-        mnemonicPrefix = true
-        renames = true
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
 
 [fetch]
-        all = true
+    all = true
 
 [help]
-        autocorrect = prompt
+    autocorrect = prompt
 
 [init]
-        defaultBranch = main
+    defaultBranch = main
+
+[interactive]
+    diffFilter = delta --color-only
 
 [merge]
-        conflictstyle = zdiff3
+    conflictstyle = zdiff3
 
 [pull]
-        rebase = true
+    rebase = true
 
 [push]
-        default = simple
-        autoSetupRemote = true
-        followTags = true
+    default = simple
+    autoSetupRemote = true
+    followTags = true
 
 [rebase]
-        autoSquash = true
-        autoStash = true
-        updateRefs = true
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
 
 [rerere]
-        enabled = true
-        autoupdate = true
+    enabled = true
+    autoupdate = true
 
 [tag]
-        sort = version:refname
+    sort = version:refname
