@@ -3,6 +3,7 @@
 
 [commit]
     verbose = true
+    gpgsign = true
 
 [core]
     fsmonitor = true
@@ -52,6 +53,7 @@
 
 [tag]
     sort = version:refname
+    gpgSign = true
 
 [user]
     name = Alex McNamara
