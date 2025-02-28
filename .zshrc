@@ -75,6 +75,10 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # Add global node modules path
 export NODE_PATH=$(npm root --quiet -g)
 
+# Resolve NVM versions and start daemon
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+
 # Use tldr man pages, when possible
 alias manman=$(which man)
 alias man='f() {
