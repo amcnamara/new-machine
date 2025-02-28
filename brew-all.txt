@@ -27,6 +27,7 @@ monitorcontrol
 moreutils
 multimarkdown
 nghttp2
+nvm
 octave
 ollama
 pandoc

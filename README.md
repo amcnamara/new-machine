@@ -54,6 +54,11 @@ sudo shutdown -r now
   * `Keys` > `Remap Modifiers` > `Left Command ⌘` to `Left Control ⌃`
   * `Keys` > `Remap Modifiers` > `Right Command ⌘` to `Left Option ⌥`
   * `General` > `Selection` > `Applications in terminal may access clipboard`
+* Install and use the most recent LTS version of Python:
+```
+nvm install --lts
+nvm use --lts
+```
 * Setup a GitHub [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) key, and [GPG](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account) signing key:
 ```
 gpg --full-generate-key
