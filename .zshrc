@@ -68,9 +68,10 @@ export PATH=~/go/bin:$PATH
 # Add mustache binary to path
 export PATH=~/.local/bin:$PATH
 
-# Add brew-managed python to path
-# TODO: Consider using pvenv to manage multiple versions
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# Add pyenv managed python to path
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 
 # Add global node modules path
 export NODE_PATH=$(npm root --quiet -g)

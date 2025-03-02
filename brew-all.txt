@@ -32,7 +32,7 @@ octave
 ollama
 pandoc
 poppler
-python
+pyenv
 python-lsp-server
 pyyaml
 qwt
