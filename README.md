@@ -61,8 +61,8 @@ nvm use --lts
 ```
 * Install a recent stable version of Python via pyenv:
 ```
-pyenv install 3.13.2
-pyenv global 3.13.2
+pyenv install 3.10.12
+pyenv global 3.10.12
 ```
 * Setup a GitHub [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) key, and [GPG](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account) signing key:
 ```
