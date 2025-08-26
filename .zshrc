@@ -1,5 +1,4 @@
 # --- Git Signing --- #
-
 # NOTE: If stuck waiting on a lock, delete the locks via
 #       rm ~/.gnupg/{S.keyboxd,public-keys.d/pubring.db.lock}
 export GPG_TTY=$(tty)
@@ -7,7 +6,6 @@ export GPG_TTY=$(tty)
 
 # --- Credentials --- #
 
-# export HOMEBREW_GITHUB_API_TOKEN
 if [[ -e .tokensrc ]]; then
   source .tokensrc
 fi
@@ -41,7 +39,6 @@ colors
 export PROMPT="%{$fg[blue]%}[%{$reset_color%}%(!.%{$fg[red]%}root%{$reset_color%}.%n)%{$fg[blue]%}]%{$reset_color%} > "
 export RPROMPT="%{$fg[yellow]%}%~%{$reset_color%}"
 
-
 # --- Environment --- #
 
 export WORKSPACE=~/Workspace
@@ -59,6 +56,9 @@ export GNUTERM=qt
 # Set java home for emacs' jdee
 #export JAVA_HOME=$(/usr/libexec/java_home)
 
+# Resolve signing conflict in VSCode
+export PATH=/usr/local/bin:$PATH
+
 # Add cask binaries to path
 export PATH=~/.cask/bin:$PATH
 
@@ -68,17 +68,17 @@ export PATH=~/go/bin:$PATH
 # Add mustache binary to path
 export PATH=~/.local/bin:$PATH
 
-# Add pyenv managed python to path
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
+# Add pyenv managed python to path [this is slow]
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init - zsh)"
 
 # Add global node modules path
-export NODE_PATH=$(npm root --quiet -g)
+export NODE_PATH="/usr/local/lib/node_modules" # $(npm root --quiet -g)
 
-# Resolve NVM versions and start daemon
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+# Resolve NVM versions and start daemon [this is slow]
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
 
 # Use tldr man pages, when possible
 alias manman=$(which man)
@@ -92,6 +92,7 @@ alias man='f() {
   fi
 }; f'
 
+alias wakebeast='wakeonlan 10:ff:e0:5f:e5:5a'
 
 alias git-report='f() {
   git ${@} log --shortstat --no-merges --pretty="format:#%H, %aN, %ae, %cd, " --date="format:%Y-%m-%d" |
