@@ -38,6 +38,11 @@ cp .emacs ~
 cp .zshrc ~
 cp .gitconfig ~
 ```
+* Configure root shell and symlink to my user's `.zshrc`:
+```
+sudo ln -s ~/.zshrc /var/root/.zshrc
+sudo chsh -s /bin/zsh root
+```
 * Install ConsolasNF font:
 ```
 open ~/Workspace/new-machine/ConsolasNF.ttf
