@@ -4,10 +4,23 @@
 export GPG_TTY=$(tty)
 
 
+
+# --- ROOT CHECK --- #
+if [[ $EUID -eq 0 ]]; then
+    # If running as root, set the prompt and load no other resources
+    export PROMPT=''\
+'%K{black}%F{#222}%K{#222}%F{red}root%f '\
+'%K{red}%F{#222} %F{black}%~%f %K{black}%F{red}'\
+$'%{%f%k%}\n 󱞩 '
+
+    return 0
+fi
+
+
 # --- Credentials --- #
 
 if [[ -e .tokensrc ]]; then
-  source .tokensrc
+    source .tokensrc
 fi
 
 
@@ -32,12 +45,24 @@ setopt hist_ignore_all_dups
 # Commands with preceeding space will not be logged
 setopt hist_ignore_space
 
-# Load prompt colors
-autoload -U colors
-colors
-# Customized pretty-prompt
-export PROMPT="%{$fg[blue]%}[%{$reset_color%}%(!.%{$fg[red]%}root%{$reset_color%}.%n)%{$fg[blue]%}]%{$reset_color%} > "
-export RPROMPT="%{$fg[yellow]%}%~%{$reset_color%}"
+# Prompt #
+export ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}" # Fixes black space after git_prompt_info
+precmd() {
+    # Insert a new line between prompts, but skip on a new terminal session
+    if [[ -n $ZSH_NEWLINE_BEFORE_PROMPT ]]; then
+        print
+    fi
+    ZSH_NEWLINE_BEFORE_PROMPT=1
+}
+export PROMPT=''\
+'%K{black}%F{#222}%K{#222}%F{white}%(!.%F{red}root%f.%n) '\
+'%K{#532d8d}%F{#222} %F{black}%~%f '\
+'$(_git_info=$(git_prompt_info);'\
+'   [[ -n $_git_info ]] && print -Pn "%K{#222}%F{#532d8d}%K{#222} $_git_info%K{black}%F{#222}" '\
+'               || print -Pn "%K{black}%F{#532d8d}" )'\
+$'%{%f%k%}\n 󱞩 '
+
+
 
 # --- Environment --- #
 
