@@ -1,0 +1,106 @@
+{
+  "profiles": [
+    {
+      "name": "Kitty Overrides",
+      "selected": true,
+      "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" },
+      "complex_modifications": {
+        "title": "Kitty modifier overrides.",
+        "rules": [
+          {
+            "description": "Override command keys with control/meta.",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^net.kovidgoyal.kitty$"
+                    ],
+                    "file_paths": ["^/Applications/kitty.app/Contents/MacOS/kitty$"],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "left_command",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "left_control" }],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^net.kovidgoyal.kitty$"
+                    ],
+                    "file_paths": ["^/Applications/kitty.app/Contents/MacOS/kitty$"],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "right_command",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "left_option" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Override copy/paste shortcuts.",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^net.kovidgoyal.kitty$"
+                    ],
+                    "file_paths": ["^/Applications/kitty.app/Contents/MacOS/kitty$"],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": ["control"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "c",
+                    "modifiers": ["command"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^net.kovidgoyal.kitty$"
+                    ],
+                    "file_paths": ["^/Applications/kitty.app/Contents/MacOS/kitty$"],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "v",
+                  "modifiers": {
+                    "mandatory": ["control"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "v",
+                    "modifiers": ["command"]
+                  }
+                ]
+                "type": "basic"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

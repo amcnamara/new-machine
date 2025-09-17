@@ -49,11 +49,17 @@ cd ~/Workspace/new-machine
 cp ./GlobalPreferences.plist ~/Library/Preferences/.GlobalPreferences.plist
 sudo shutdown -r now
 ```
-* Install [iTerm2](https://iterm2.com/), and additionally set:
-  * Load `iTerm_default.json` profile settings
-  * `Keys` > `Remap Modifiers` > `Left Command ⌘` to `Left Control ⌃`
-  * `Keys` > `Remap Modifiers` > `Right Command ⌘` to `Left Option ⌥`
-  * `General` > `Selection` > `Applications in terminal may access clipboard`
+* Install [Kitty](https://sw.kovidgoyal.net/kitty/):
+```
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+```
+* Install [Karabiner](https://karabiner-elements.pqrs.org/) and override config
+  * Follow OSX permissions grant [instructions](https://karabiner-elements.pqrs.org/docs/manual/misc/required-macos-settings/)
+```
+brew install --cask karabiner-elements
+mkdir -p ~/.config/karabiner
+cp ./karabiner.json ~/.config/karabiner
+```
 * Install and use the most recent LTS version of Node:
 ```
 nvm install --lts
