@@ -38,9 +38,9 @@ cp .emacs ~
 cp .zshrc ~
 cp .gitconfig ~
 ```
-* Install consolas font:
+* Install ConsolasNF font:
 ```
-open ~/Workspace/new-machine/Consolas.ttf
+open ~/Workspace/new-machine/ConsolasNF.ttf
 ```
 * Set tracking speed, key repeat (fastest), and key delay (shortest)
 * Copy OSX App Shortcuts (requires restart):
