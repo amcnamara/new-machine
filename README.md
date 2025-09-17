@@ -54,9 +54,11 @@ cd ~/Workspace/new-machine
 cp ./GlobalPreferences.plist ~/Library/Preferences/.GlobalPreferences.plist
 sudo shutdown -r now
 ```
-* Install [Kitty](https://sw.kovidgoyal.net/kitty/):
+* Install [Kitty](https://sw.kovidgoyal.net/kitty/) and copy in global configs:
 ```
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+mkdir -p ~/.configs/kitty
+cp ./kitty.json ~/.configs/kitty
 ```
 * Install [Karabiner](https://karabiner-elements.pqrs.org/) and override config
   * Follow OSX permissions grant [instructions](https://karabiner-elements.pqrs.org/docs/manual/misc/required-macos-settings/)
