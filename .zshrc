@@ -12,7 +12,6 @@ if [[ $EUID -eq 0 ]]; then
 '%K{black}%F{#222}%K{#222}%F{red}root%f '\
 '%K{red}%F{#222} %F{black}%~%f %K{black}%F{red}'\
 $'%{%f%k%}\n 󱞩 '
-
     return 0
 fi
 
@@ -29,6 +28,7 @@ fi
 # Oh-my-zsh configuration
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
+DISABLE_AUTO_TITLE="true"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git)
