@@ -55,8 +55,8 @@ precmd() {
     ZSH_NEWLINE_BEFORE_PROMPT=1
 }
 export PROMPT=''\
-'%K{black}%F{#222}%K{#222}%F{white}%(!.%F{red}root%f.%n) '\
-'%K{#532d8d}%F{#222} %F{black}%~%f '\
+'%K{black}%F{#222}%K{#222}%F{white}%n '\
+'%K{#532d8d}%F{#222} %F{white}%~%f '\
 '$(_git_info=$(git_prompt_info);'\
 '   [[ -n $_git_info ]] && print -Pn "%K{#222}%F{#532d8d}%K{#222} $_git_info%K{black}%F{#222}" '\
 '               || print -Pn "%K{black}%F{#532d8d}" )'\
