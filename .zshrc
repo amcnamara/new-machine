@@ -55,8 +55,8 @@ precmd() {
     ZSH_NEWLINE_BEFORE_PROMPT=1
 }
 export PROMPT=''\
-'%K{black}%F{#222}%K{#222}%F{white}%n '\
-'%K{#532d8d}%F{#222} %F{white}%~%f '\
+'%K{black}%F{#222}%K{#222}%F{#BBB}%n '\
+'%K{#532d8d}%F{#222} %F{#BBB}%~%f '\
 '$(_git_info=$(git_prompt_info);'\
 '   [[ -n $_git_info ]] && print -Pn "%K{#222}%F{#532d8d}%K{#222} $_git_info%K{black}%F{#222}" '\
 '               || print -Pn "%K{black}%F{#532d8d}" )'\
@@ -157,3 +157,9 @@ alias git-report-generate-all='f() {
     ~/Workspace/reports/auditboard_report_global.csv
   echo " $fg[green]done$reset_color"
 }; f'
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/amcnamara/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
