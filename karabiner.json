@@ -45,59 +45,6 @@
                 "type": "basic"
               }
             ]
-          },
-          {
-            "description": "Override copy/paste shortcuts.",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "^net.kovidgoyal.kitty$"
-                    ],
-                    "file_paths": ["^/Applications/kitty.app/Contents/MacOS/kitty$"],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "c",
-                  "modifiers": {
-                    "mandatory": ["control"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "c",
-                    "modifiers": ["command"]
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "^net.kovidgoyal.kitty$"
-                    ],
-                    "file_paths": ["^/Applications/kitty.app/Contents/MacOS/kitty$"],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "v",
-                  "modifiers": {
-                    "mandatory": ["control"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "v",
-                    "modifiers": ["command"]
-                  }
-                ]
-                "type": "basic"
-              }
-            ]
           }
         ]
       }

@@ -55,6 +55,7 @@ cp ./GlobalPreferences.plist ~/Library/Preferences/.GlobalPreferences.plist
 sudo shutdown -r now
 ```
 * Install [Kitty](https://sw.kovidgoyal.net/kitty/) and copy in global configs:
+  * Swap out the terrible icon with `Terminal.app`, and flush Dock cache.
 ```
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 mkdir -p ~/.configs/kitty
