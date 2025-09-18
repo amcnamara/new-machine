@@ -21,11 +21,11 @@ xargs brew install < brew-all.txt
 ```
 brew services start ollama
 ```
-* Pull down local models for Ellama:
+* Pull down local models for Ollama:
 ```
-ollama pull llama3.1:8b-instruct-q8_0
-ollama pull qwen2.5-coder:3b
-ollama pull qwen2.5:3b
+ollama pull llama4:scout
+ollama pull qwen3-coder:30b
+ollama pull qwen3:4b
 ```
 * Install [OMZ](https://ohmyz.sh/)
 ```
