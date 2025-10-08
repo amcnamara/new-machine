@@ -69,9 +69,10 @@ $'%{%f%k%}\n 󱞩 '
 export WORKSPACE=~/Workspace
 
 # When piping X always force emacs to open in a terminal (no-window)
+export EMACS_SOCKET_DIR="$HOME/.emacs.d/server"
 alias emacsemacs=$(which emacs)
 alias emacsd="emacsemacs --daemon"
-alias emacs="emacsclient -nw"
+alias emacs='emacsclient -nw --socket-name "$EMACS_SOCKET_DIR/server"'
 # Set default editor for git, git-blog, etc
 export EDITOR=emacs
 
