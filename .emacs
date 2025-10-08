@@ -1,4 +1,30 @@
+(setq server-socket-dir (expand-file-name "server" user-emacs-directory))
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
+;(require 'flyspell)
+
+;(setq ispell-program-name "aspell")
+;(setq ispell-extra-args '("--sug-mode=ultra"))
+
+;; Set Aspell as the default spell checker
+;(setq ispell-program-name "aspell")
+;(setq ispell-extra-args '("--sug-mode=ultra"))
+
+;; Enable spell checking in text modes
+;(dolist (hook '(text-mode-hook markdown-mode-hook org-mode-hook))
+;  (add-hook hook 'flyspell-mode))
+
+;; Enable spell checking in comments for programming modes
+;(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
+
 ;; --- System --- ;;
+
+;; Coerce files into utf-8 encoding
+(prefer-coding-system 'utf-8)
+(set-language-environment "UTF-8")
 
 ;; Add MELPA to the default GNU package archive
 (require 'package)
@@ -88,7 +114,8 @@
   (require 'llm-ollama)
   (setopt ellama-provider
 	      (make-llm-ollama
-	       :chat-model "llama3.1:8b-instruct-q8_0"
+	       ;:chat-model "llama3.1:8b-instruct-q8_0"
+	       :chat-model "llama3.1:latest"
 	       :embedding-model "nomic-embed-text"
 	       :default-chat-non-standard-params '(("num_ctx" . 8192))))
   (setopt ellama-summarization-provider
@@ -103,7 +130,7 @@
 	       :default-chat-non-standard-params '(("num_ctx" . 32768))))
   (setopt ellama-naming-provider
 	      (make-llm-ollama
-	       :chat-model "llama3.1:8b-instruct-q8_0"
+	       :chat-model "llama3.1:latest"
 	       :embedding-model "nomic-embed-text"
 	       :default-chat-non-standard-params '(("stop" . ("\n")))))
   (setopt ellama-naming-scheme 'ellama-generate-name-by-llm)
@@ -146,6 +173,8 @@
 (global-set-key (kbd "M-w"  ) 'kill-ring-save)
 (global-set-key (kbd "M-v"  ) 'yank)
 
+;; Unbind C-v so that terminal can use it to Paste
+(global-unset-key (kbd "C-v"))
 
 ;; --- Modes --- ;;
 
@@ -177,13 +206,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ; '(jdee-compile-enable-kill-buffer 2)
- ; '(jdee-compiler '("javac"))
- ; '(jdee-jdk-registry
- ;   '(("10.0" . "/Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home")))
- ; '(jdee-server-dir "/Users/amcnamara/.emacs.d/jdee-server/target")
  '(package-selected-packages
-   '(ellama quelpa-leaf quelpa-use-package quelpa company jdee kotlin-mode devdocs smartparens)))
+   '(flycheck-aspell ellama quelpa-leaf quelpa-use-package quelpa company jdee kotlin-mode devdocs smartparens)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
