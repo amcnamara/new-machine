@@ -2,7 +2,7 @@
 
 * Create a workspace:
 ```
-mydir ~/Workspace
+mkdir ~/Workspace
 cd ~/Workspace
 ```
 * Install [brew](https://brew.sh/), pull down this repo (obviously), and load default set of software:
