@@ -11,7 +11,7 @@ cd ~/Workspace
 ```
 ```
 brew install git
-git clone git@github.com:amcnamara/new-machine.git ~/Workspace/new-machine
+git clone https://github.com/amcnamara/new-machine.git ~/Workspace/new-machine
 ```
 ```
 cd ~/Workspace/new-machine
