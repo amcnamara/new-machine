@@ -48,6 +48,7 @@ sudo chsh -s /bin/zsh root
 open ~/Workspace/new-machine/ConsolasNF.ttf
 ```
 * Set tracking speed, key repeat (fastest), and key delay (shortest)
+* Install [Docker Desktop](https://docs.docker.com/desktop/setup/install/mac-install/)
 * Copy OSX App Shortcuts (requires restart):
 ```
 cd ~/Workspace/new-machine
@@ -56,12 +57,12 @@ sudo shutdown -r now
 ```
 * Install [Kitty](https://sw.kovidgoyal.net/kitty/) and copy in global configs:
   * Swap out the terrible icon with `Terminal.app`, and flush Dock cache
+  * Click `kitty > Reload Preferences` to pull in the updated config
 ```
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 mkdir -p ~/.config/kitty
 cp ./kitty.conf ~/.config/kitty
 ```
-* Click `kitty > Reload Preferences` to pull in the updated config
 * Install [Karabiner](https://karabiner-elements.pqrs.org/) and override config
   * Follow OSX permissions grant [instructions](https://karabiner-elements.pqrs.org/docs/manual/misc/required-macos-settings/)
 ```
