@@ -17,8 +17,9 @@ git clone https://github.com/amcnamara/new-machine.git ~/Workspace/new-machine
 cd ~/Workspace/new-machine
 xargs brew install < brew-all.txt
 ```
-* Start Ollama daemon, this also registers a system-startup initializer:
+* Start Emacs and Ollama daemons, this also registers a system-startup initializer:
 ```
+brew services start emacs
 brew services start ollama
 ```
 * Pull down local models for Ollama:
@@ -52,7 +53,11 @@ open ~/Workspace/new-machine/ConsolasNF.ttf
 * Copy OSX App Shortcuts (requires restart):
 ```
 cd ~/Workspace/new-machine
-cp ./GlobalPreferences.plist ~/Library/Preferences/.GlobalPreferences.plist
+
+defaults import -g ./global_defaults.plist
+defaults import com.apple.symbolichotkeys ./symbolic_hotkeys.plist
+
+killall cfprefsd
 sudo shutdown -r now
 ```
 * Install [Kitty](https://sw.kovidgoyal.net/kitty/) and copy in global configs:
