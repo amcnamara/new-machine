@@ -38,6 +38,7 @@ cd ~/Workspace/new-machine
 cp .emacs ~
 cp .zshrc ~
 cp .gitconfig ~
+touch ~/.hushlogin
 ```
 * Configure root shell and symlink to my user's `.zshrc`:
 ```
