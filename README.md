@@ -86,6 +86,7 @@ pyenv install 3.10.12
 pyenv global 3.10.12
 ```
 * Setup a GitHub [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) key, and [GPG](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account) signing key:
+  * Configure pinentry to store the signing key on the login keychain: add `use-agent` to `~/.gnupg/gpg.conf` (`~/.gnupg/gpg-agent.conf` should have a pointer to brew's installation of `pinentry-program`)
 ```
 gpg --full-generate-key
 gpg --list-secret-keys --keyid-format=long
