@@ -58,3 +58,6 @@
 [user]
     name = Alex McNamara
     email = alex.mcnamara@gmail.com
+
+[log]
+    showSignature = true
