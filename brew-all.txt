@@ -14,6 +14,7 @@ gnuplot
 gnuradio
 guile
 hackrf
+htop
 imath
 jq
 kubernetes-cli
