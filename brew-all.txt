@@ -12,6 +12,7 @@ gnu-go
 gnupg
 gnuplot
 gnuradio
+go
 guile
 hackrf
 htop
