@@ -108,43 +108,6 @@
 (setq sp-highlight-pair-overlay nil)
 (setq sp-highlight-wrap-overlay nil)
 
-(use-package ellama
-  :bind ("C-u" . ellama-transient-main-menu)
-  :init
-  (require 'llm-ollama)
-  (setopt ellama-provider
-	      (make-llm-ollama
-	       ;:chat-model "llama3.1:8b-instruct-q8_0"
-	       :chat-model "llama3.1:latest"
-	       :embedding-model "nomic-embed-text"
-	       :default-chat-non-standard-params '(("num_ctx" . 8192))))
-  (setopt ellama-summarization-provider
-	      (make-llm-ollama
-	       :chat-model "qwen2.5:3b"
-	       :embedding-model "nomic-embed-text"
-	       :default-chat-non-standard-params '(("num_ctx" . 32768))))
-  (setopt ellama-coding-provider
-	      (make-llm-ollama
-	       :chat-model "qwen2.5-coder:3b"
-	       :embedding-model "nomic-embed-text"
-	       :default-chat-non-standard-params '(("num_ctx" . 32768))))
-  (setopt ellama-naming-provider
-	      (make-llm-ollama
-	       :chat-model "llama3.1:latest"
-	       :embedding-model "nomic-embed-text"
-	       :default-chat-non-standard-params '(("stop" . ("\n")))))
-  (setopt ellama-naming-scheme 'ellama-generate-name-by-llm)
-  (setopt ellama-translation-provider
-	      (make-llm-ollama
-	       :chat-model "qwen2.5:3b"
-	       :embedding-model "nomic-embed-text"
-	       :default-chat-non-standard-params '(("num_ctx" . 32768))))
-  ;; see M-x info > Elisp > Buffer Display Action Functions
-  (setopt ellama-chat-display-action-function #'display-buffer-full-frame)
-  (setopt ellama-instant-display-action-function #'display-buffer-at-bottom)
-  :config
-  (add-hook 'org-ctrl-c-ctrl-c-hook #'ellama-chat-send-last-message))
-
 
 ;; --- Initialization --- ;;
 
@@ -207,7 +170,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(flycheck-aspell ellama quelpa-leaf quelpa-use-package quelpa company jdee kotlin-mode devdocs smartparens)))
+   '(flycheck-aspell quelpa-leaf quelpa-use-package quelpa company jdee kotlin-mode devdocs smartparens)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

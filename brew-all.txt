@@ -26,7 +26,6 @@ monitorcontrol
 moreutils
 multimarkdown
 nvm
-ollama
 pandoc
 pinentry-mac
 poppler

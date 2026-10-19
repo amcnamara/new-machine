@@ -17,16 +17,9 @@ git clone https://github.com/amcnamara/new-machine.git ~/Workspace/new-machine
 cd ~/Workspace/new-machine
 xargs brew install < brew-all.txt
 ```
-* Start Emacs and Ollama daemons, this also registers a system-startup initializer:
+* Start Emacs daemon, this also registers a system-startup initializer:
 ```
 brew services start emacs
-brew services start ollama
-```
-* Pull down local models for Ollama:
-```
-ollama pull llama4:scout
-ollama pull qwen3-coder:30b
-ollama pull qwen3:4b
 ```
 * Install [OMZ](https://ohmyz.sh/)
 ```
