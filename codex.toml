@@ -1,0 +1,358 @@
+model = "gpt-6-astra"
+model_reasoning_effort = "max"
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+personality = "pragmatic"
+
+notify = ["/Users/amcnamara/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+service_tier = "default"
+
+[features] 
+goals = true
+js_repl = false
+
+[[hooks.PreToolUse]]
+matcher = ".*"
+
+[[hooks.PreToolUse.hooks]]
+type = "command"
+command = "/Users/amcnamara/.codex/hooks/block_wtw_view_image.py"
+timeout = 5
+statusMessage = "Blocking WilliamTheWorm image ingestion"
+
+[[hooks.PreToolUse]]
+matcher = "^(exec_command|functions\\.exec_command|multi_tool_use\\.parallel|parallel)$"
+
+[[hooks.PreToolUse.hooks]]
+type = "command"
+command = "/Users/amcnamara/.codex/hooks/block_wtw_codex_transcript_dumps.py"
+timeout = 5
+statusMessage = "Blocking broad Codex transcript dumps"
+
+[hooks.state]
+
+[hooks.state."/Users/amcnamara/.codex/config.toml:pre_tool_use:0:0"]
+trusted_hash = "sha256:c282ce0b593ae6de7d60dd8d8013dc7668abd323355ea6ebd909c2bf770dd975"
+
+[hooks.state."/Users/amcnamara/.codex/config.toml:pre_tool_use:1:0"]
+trusted_hash = "sha256:4551ef5bfadc8b5e9bc2b5607bea5284454ba194978ed0abcd56a8ca00f316df"
+
+[hooks.state."/Users/amcnamara/Workspace/WilliamTheWorm/.codex/config.toml:pre_tool_use:0:0"]
+trusted_hash = "sha256:1d358c3cf2871715a24d179359ce25600aff2edda953693ca73df6748d18f337"
+
+[projects."/Users/amcnamara/Workspace/nexee"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexee/.git/modules"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexee/.git/modules/api-auth/modules"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexee/.git/modules/infra"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexee/.git/modules/client"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexee/.git/modules/api"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexee/.git/modules/api-model/modules"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/client/web"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/openclaw"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/api/engine"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/infra/postgres"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/client/ios"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/api/auth/kratos-ui"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/client/android"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/api/sharing"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/api/engine/tools/mcp-servers"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/api/engine/tools"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/api/engine/tools/mcp-gateway"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/infra/auth"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/api/process"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/infra/account"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/claude-cloud-agent"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/.codex"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/bonsai-8b-1bit"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/client/admin"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/website"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/client/web/lib/engine-parser"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/documentation"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/client/tui"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/alx"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/alexir"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/token-usage-charts"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/infra/grafana"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/OpenWorm"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/WilliamTheWorm"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/TinyLM6502"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/nexese/api/message"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/MtGoat"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/codex"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Documents/family"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Documents/BlankBot"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/gone.bot"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Documents/Codex/2026-08-15/realtime-voice-chat"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Documents/Codex/2026-08-17/i-t"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Documents/Codex/2026-08-20/open-https-gone-bot-install-the"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Documents/Codex/2026-08-21/open-https-gone-bot-install-the"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Documents/Codex/2026-08-25/open-https-gone-bot-install-the"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Documents/Codex/2026-08-25/realtime-voice-chat"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Documents/Codex/2026-08-25/plu"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Documents/Codex/2026-08-27/what-do-you-know-about-my"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/sten.bot"]
+trust_level = "trusted"
+
+[projects."/Users/amcnamara/Workspace/gwonmac"]
+trust_level = "trusted"
+
+[notice]
+hide_gpt5_1_migration_prompt = true
+"hide_gpt-5.1-codex-max_migration_prompt" = true
+hide_full_access_warning = true
+hide_rate_limit_model_nudge = true
+
+[notice.model_migrations]
+"gpt-5.2" = "gpt-5.2-codex"
+"gpt-5.4" = "gpt-5.5"
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."slack@openai-curated"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[marketplaces.openai-bundled]
+source_type = "local"
+source = "/Users/amcnamara/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+source_type = "local"
+source = "/Users/amcnamara/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[tui]
+animations = false
+screen_reader_detection_done = true
+copy_on_select = "always"
+
+[tui.model_availability_nux]
+gpt-6-astra = 4
+"gpt-6.1-sol" = 4
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
+
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/amcnamara/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+CODEX_HOME = "/Users/amcnamara/.codex"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_TINYSKY_ENABLED = "1"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.924.22138"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/amcnamara/.codex/plugins/cache/openai-bundled/browser/26.924.22138/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+SKY_CUA_SERVICE_PATH = "/Users/amcnamara/.codex/computer-use/Codex Computer Use.app"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
+
+[mcp_servers.computer-use]
+command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
+args = ["mcp"]
+cwd = "."
+enabled = false
+
+[desktop]
+ambient-suggestions-enabled = false
+keepRemoteControlAwakeWhilePluggedIn = true
+followUpQueueMode = "queue"
+dock-icon-preference = "codex-system"
+codex-micro-lighting-auto-off = "3-minutes"
+codex-micro-single-tap-agent-keys = true
+conversationDetailMode = "STEPS_PROSE"
+
+[desktop.codex-micro-layout]
+version = 1
+encoderMode = "reasoning"
+voiceButtonMode = "push-to-talk"
+
+[desktop.codex-micro-layout.slots]
+
+[desktop.codex-micro-layout.slots.ACT06]
+keycapId = "FAST"
+
+[desktop.codex-micro-layout.slots.ACT07]
+keycapId = "APPR"
+
+[desktop.codex-micro-layout.slots.ACT08]
+keycapId = "REJ"
+
+[desktop.codex-micro-layout.slots.ACT09]
+keycapId = "NEW"
+commandId = "newTask"
+
+[desktop.codex-micro-layout.slots.ACT10_ACT11]
+keycapId = "MIC"
+
+[desktop.codex-micro-layout.slots.ACT12]
+keycapId = "CODEX"
+
+[desktop.codex-micro-layout.analogStick]
+
+[desktop.codex-micro-layout.analogStick.up]
+type = "command"
+commandId = "composer.togglePlanMode"
+
+[desktop.codex-micro-layout.analogStick.right]
+type = "command"
+commandId = "navigateForward"
+
+[desktop.codex-micro-layout.analogStick.down]
+type = "command"
+commandId = "toggleSidebar"
+
+[desktop.codex-micro-layout.analogStick.left]
+type = "command"
+commandId = "navigateBack"
+
+[desktop.codex-micro-layout.encoder]
+
+[shell_environment_policy.set]
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "9230e2bd8b24b7ac7a0ba6774c64bf0d78ecdabbdd91d0ed627b02a587bae2df"

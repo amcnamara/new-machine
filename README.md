@@ -21,6 +21,11 @@ xargs brew install < brew-all.txt
 ```
 brew services start emacs
 ```
+* Install codex-cli and override config:
+```
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+cp ./codex.toml ~/.codex/config.toml
+```
 * Install [OMZ](https://ohmyz.sh/)
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
